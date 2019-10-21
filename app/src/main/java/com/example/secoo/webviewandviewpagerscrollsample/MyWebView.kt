@@ -60,7 +60,8 @@ class MyWebView @JvmOverloads constructor(
     /**
      * [view] 是否可以横向滑动
      */
-    private fun canScrollHorizontal(view: View) = view.canScrollHorizontally(100) || view.canScrollHorizontally(-100)
+    private fun canScrollHorizontal(view: View) =
+            view.canScrollHorizontally(100) || view.canScrollHorizontally(-100)
 
     companion object {
         private val LOGTAG = "MyWebView"

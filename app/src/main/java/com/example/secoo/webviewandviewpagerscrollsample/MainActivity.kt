@@ -6,18 +6,15 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
-    private val viewPager: ViewPager by lazy {
-        findViewById<ViewPager>(R.id.pager)
-    }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        viewPager.adapter = ScreenSlidePagerAdapter(supportFragmentManager)
+        mPager.adapter = ScreenSlidePagerAdapter(supportFragmentManager)
     }
 
 
@@ -25,9 +22,13 @@ class MainActivity : AppCompatActivity() {
 
         override fun getItem(position: Int): Fragment {
             return if (position == 0) {
-                WebViewFragment.getInstance("https://asset.droidyue.com/content/scroll_page.html")
+//                WebViewFragment.getInstance("https://droidyue.com")
+//                WebViewFragment.getInstance("https://www.iqiyi.com")
+                WebViewFragment.getInstance("https://www.baidu.com")
+
             } else {
-                WebViewFragment.getInstance("https://droidyue.com")
+//                WebViewFragment.getInstance("https://asset.droidyue.com/content/scroll_page.html")
+                WebViewFragment.getInstance("https://m.iqiyi.com")
             }
         }
 
